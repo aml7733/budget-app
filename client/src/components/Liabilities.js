@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Liabilities = (props) => {
-  const liabilities = props.liabilities.map(liability => (
+class Liabilities extends Component {
+  render() {
+    const liabilities = this.props.items && this.props.items.map(liability => (
       <p>{liability.name}  :  {liability.amount}</p>
-  ));
+    ))
+
 
     return (
-    <div className="col-md-6 liabilities">
-      {liabilities}
-    </div>
-  )
+      <div className="liabilities col-md-6">
+        {liabilities}
+      </div>
+    )
+  }
 }
 
 export default Liabilities;

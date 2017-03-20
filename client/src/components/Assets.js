@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Assets extends Component {
   render() {
-    debugger
     const assets = this.props.items && this.props.items.map(asset => (
       <p>{asset.name}  :  {asset.amount}</p>
     ))
@@ -10,7 +9,7 @@ class Assets extends Component {
 
     return (
       <div className="assets col-md-6">
-        {assets.length > 0 && assets}
+        {assets}
       </div>
     )
   }
