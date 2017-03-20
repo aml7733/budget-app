@@ -10,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Nav bsStyle="pills">
+          <Link to="/items">Show Items</Link>
           <Link to="/items/new">Create New Item</Link>
           <Link to="/items/clear">Delete All Items</Link>
         </Nav>

@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
 import App from './components/App';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import manageItems from './reducers/manageItems';
 
-const store = createStore(manageItems, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(manageItems, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>
