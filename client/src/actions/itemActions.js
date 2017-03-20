@@ -4,7 +4,6 @@ export function addItem(item) {
 
 export function fetchItems() {
   return (dispatch) => {
-    return fetch('/items').then(response => response.json()).then(items => dispatch({ type: "ADD_ITEM"}))
+    return fetch('/items').then(response => response.json()).then(itemsJSON => dispatch({ type: "ADD_ITEM", payload: itemsJSON }))
   }
-  return { type: "FETCH_ITEMS", items }
 }
