@@ -6,7 +6,7 @@ const Liabilities = (props) => {
   ));
 
     return (
-    <div className="col-md-6">
+    <div className="col-md-6 liabilities">
       {liabilities}
     </div>
   )
