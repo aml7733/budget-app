@@ -31,17 +31,17 @@ class ItemsContainer extends Component {
 };
 
 const mapStateToProps = (state) => {
+  console.log('in map state to props ItemsContainer')
   return {
     items: state.items
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    bindActionCreators({
+  console.log('in map dispatch to props ItemsContainer')
+  return bindActionCreators({
       fetchItems: fetchItems
-    }, dispatch)
-  };
+    }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsContainer);
+export const ConnectedItemsContainer = connect(mapStateToProps, mapDispatchToProps)(ItemsContainer);

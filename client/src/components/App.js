@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import ItemsContainer from '../containers/ItemsContainer'
+// import ItemsContainer from '../containers/ItemsContainer'
 
 
 class App extends Component {
@@ -8,10 +8,9 @@ class App extends Component {
     return (
       <div className="App">
         <ul className="nav">
-          <Link to="/items">Show All Items</Link>
-          <Link to="/items/new">Add New Item</Link>
+          <li><Link to="/items">Show All Items</Link></li>
+          <li><Link to="/items/new">Add New Item</Link></li>
         </ul>
-          <ItemsContainer />
       </div>
     );
   }
