@@ -21,8 +21,6 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       render json: @item
-    else
-      alert: "Invalid item parameters."
     end
   end
 
