@@ -16,12 +16,12 @@ class ItemsContainer extends Component {
   }
 
   render() {
-    let assets = this.props.items.filter(item => item.amount >= 0);
-    let liabilities = this.props.items.filter(item => item.amount < 0);
+    let assets = this.props.items.assets;
+    let liabilities = this.props.items.liabilities;
 
     return (
       <div>
-        <div className='col-lg-12'>
+        <div className=''>
           <Assets items={assets} />
           <Liabilities items={liabilities} />
         </div>
@@ -38,7 +38,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators({
+    bindActionCreators({
       fetchItems: fetchItems
     }, dispatch)
   };

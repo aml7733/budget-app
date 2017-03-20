@@ -60,8 +60,7 @@ class ItemNewContainer extends Component {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    addItem: bindActionCreators(addItem, dispatch)
+  return bindActionCreators({addItem: addItem}}, dispatch)
   };
 };
 
