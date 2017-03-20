@@ -9,6 +9,7 @@ class Liabilities extends Component {
 
     return (
       <div className="liabilities col-md-6">
+        <h3>Liabilities</h3>
         {liabilities}
       </div>
     )

@@ -39,7 +39,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     actions: bindActionCreators({
-      fetchItems
+      fetchItems: fetchItems
     }, dispatch)
   };
 };

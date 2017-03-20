@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
     @items = {}
     @items[:assets] = assets
     @items[:liabilities] = liabilities
-
+    binding.pry
     render json: @items
   end
 

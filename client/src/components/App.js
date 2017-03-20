@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div className="App">
         <ul className="nav">
-          <Link to="http://localhost:3001/items">Show All Items</Link>
-          <Link to="http://localhost:3001/items/new">Add New Item</Link>
+          <Link to="/items">Show All Items</Link>
+          <Link to="/items/new">Add New Item</Link>
         </ul>
           <ItemsContainer />
       </div>
