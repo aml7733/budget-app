@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Button from 'react-bootstrap/lib/Button';
+import Nav from 'react-bootstrap/lib/Nav';
+import { Link } from 'react-router';
+
 
 import './App.css';
 
@@ -7,12 +9,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <Button>Welcome to React</Button>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Nav bsStyle="pills">
+          <Link to="/items/new">Create New Item</Link>
+          <Link to="/items/clear">Delete All Items</Link>
+        </Nav>
       </div>
     );
   }
