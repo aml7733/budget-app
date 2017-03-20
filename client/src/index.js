@@ -12,7 +12,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <Route path="/items" component={ItemsPage}>
+        <Route path="/items" component={ItemsPage}
           <Route path="/items/new" component={ItemsNew} />
           <Route path="/items/:id" component={ItemsShow} />
         </Route>
