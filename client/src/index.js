@@ -13,7 +13,7 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <Route path="/items" component={ItemsPage}>
           <Route path="/items/new" component={ItemsNew} />
-          <Route path="/items/:id" component={ItemsShow}
+          <Route path="/items/:id" component={ItemsShow} />
         </Route>
       </Route>
     </Router>
