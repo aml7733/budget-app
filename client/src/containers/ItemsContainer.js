@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions from '../actions/itemActions.js'
+import { fetchItems } from '../actions/itemActions.js'
 import { Link } from 'react-router';
 import Assets from '../components/Assets';
 import Liabilities from '../components/Liabilities'
@@ -15,10 +15,10 @@ class ItemsContainer extends Component {
     }
   }
 
-  const assets = this.props.items.filter(item => item.amount >= 0);
-  const liabilities = this.props.items.filter(item => item.amount < 0);
-
   render() {
+    let assets = this.props.items.filter(item => item.amount >= 0);
+    let liabilities = this.props.items.filter(item => item.amount < 0);
+
     return (
       <div>
         <div className='col-lg-12'>
@@ -39,7 +39,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchItems: bindActionCreators(fetchItems, dispatch)
+    actions: bindActionCreators(fetchItems, dispatch)
   };
 };
 

@@ -10,6 +10,6 @@ export function fetchItems() {
 
 export function clearItems() {
   return (dispatch) => {
-    return fetch('/items/clear').then()
+    return fetch('/items/clear').then(alert("All items cleared."))
   }
 }

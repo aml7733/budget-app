@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
-import Nav from 'react-bootstrap/lib/Nav';
+import { Nav, Navbar, Button } from 'react-bootstrap';
 import { Link } from 'react-router';
+import ItemsContainer from '../containers/ItemsContainer'
 
-
-import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav bsStyle="pills">
-          <Link to="/items">Show Items</Link>
-          <Link to="/items/new">Create New Item</Link>
-          <Link to="/items/clear">Delete All Items</Link>
-        </Nav>
+        <Navbar fixedTop={true}>
+          <Nav>
+            <Button><Link to="/items">Show All Items</Link></Button>
+            <Button><Link to="/items/new">Add New Item</Link></Button>
+          </Nav>
+        </Navbar>
+        <ItemsContainer />
       </div>
     );
   }
 }
 
 export default App;
+
+
+// <Link to="/items/new">Add New Item</Link>
