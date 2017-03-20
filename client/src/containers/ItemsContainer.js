@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchItems } from '../actions/itemActions.js'
-import { Link } from 'react-router';
+import fetchItems from '../actions/itemActions.js'
 import Assets from '../components/Assets';
 import Liabilities from '../components/Liabilities'
 
@@ -11,7 +10,8 @@ class ItemsContainer extends Component {
   componentDidMount(){
     if (this.props.items.length === 0) {
       console.log('in component did mount')
-      this.props.actions.fetchItems();
+      fetchItems();
+      debugger;
     }
   }
 
@@ -22,9 +22,8 @@ class ItemsContainer extends Component {
     return (
       <div>
         <div className='col-lg-12'>
-          <Assets assets={assets} />
-          <Liabilities liabilities={liabilities} />
-          <Link to="/items/new">Add a New Item</Link>
+          <Assets items={assets} />
+          <Liabilities items={liabilities} />
         </div>
       </div>
     );
@@ -39,7 +38,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    actions: bindActionCreators(fetchItems, dispatch)
+    actions: bindActionCreators({
+      fetchItems
+    }, dispatch)
   };
 };
 

@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Assets = (props) => {
-  const assets = props.assets.map(asset => (
+class Assets extends Component {
+  render() {
+    debugger
+    const assets = this.props.items && this.props.items.map(asset => (
       <p>{asset.name}  :  {asset.amount}</p>
-  ));
+    ))
+
 
     return (
-    <div className="col-md-6">
-      {assets}
-    </div>
-  )
+      <div className="assets col-md-6">
+        {assets.length > 0 && assets}
+      </div>
+    )
+  }
 }
 
 export default Assets;
