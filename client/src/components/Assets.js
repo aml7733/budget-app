@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Assets = (props) => {
   const assets = props.assets.map(asset => (
@@ -11,3 +11,5 @@ const Assets = (props) => {
     </div>
   )
 }
+
+export default Assets;

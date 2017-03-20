@@ -11,3 +11,5 @@ const liabilities = (props) => {
     </div>
   )
 }
+
+export default Liabilities;
