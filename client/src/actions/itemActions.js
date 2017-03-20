@@ -7,3 +7,9 @@ export function fetchItems() {
     return fetch('/items').then(response => response.json()).then(itemsJSON => dispatch({ type: "ADD_ITEM", payload: itemsJSON }))
   }
 }
+
+export function clearItems() {
+  return (dispatch) => {
+    return fetch('/items/clear').then()
+  }
+}

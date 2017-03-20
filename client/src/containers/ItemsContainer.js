@@ -29,7 +29,6 @@ class ItemsContainer extends Component {
       </div>
     );
   }
-
 };
 
 const mapStateToProps = (state) => {
