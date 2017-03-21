@@ -4,7 +4,6 @@ const itemsReducer = (state = [], action) => {
       return state.concat(action.payload);
     case 'DELETE_ITEM':
       return state.filter(item => item.id !== action.id);
-      break;
     default:
       return state;
   }

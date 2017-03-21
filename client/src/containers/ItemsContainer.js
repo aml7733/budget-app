@@ -27,7 +27,7 @@ class ItemsContainer extends Component {
     return (
       <div>
         <div className=''>
-          <Assets items={assets} />
+          <Assets items={assets} /><br/>
           <Liabilities items={liabilities} />
         </div>
       </div>

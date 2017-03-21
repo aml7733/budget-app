@@ -7,9 +7,9 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import App from './components/App';
 import {ConnectedItemsContainer} from './containers/ItemsContainer';
-import ItemNewContainer from './containers/ItemNewContainer';
-import ItemShow from './containers/ItemShow';
-import jquery from 'jquery';
+import {ConnectedItemNewContainer} from './containers/ItemNewContainer';
+import ListItem from './containers/ListItem';
+// import jquery from 'jquery';
 import '../semantic/dist/semantic.css';
 
 const store = createStore(
@@ -23,8 +23,8 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <Route path="/items" component={ConnectedItemsContainer} >
-          <Route path="/items/new" component={ItemNewContainer} />
-          <Route path="/items/:id" component={ItemShow} />
+          <Route path="/items/new" component={ConnectedItemNewContainer} />
+          <Route path="/items/:id" component={ListItem} />
         </Route>
       </Route>
     </Router>

@@ -7,7 +7,7 @@ class Assets extends Component {
     ));
 
     return (
-      <div className="assets col-md-6">
+      <div className="eight wide column">
         <h3>Assets</h3>
         {assets}
       </div>

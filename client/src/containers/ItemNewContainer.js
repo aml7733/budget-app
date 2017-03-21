@@ -5,6 +5,7 @@ import { addItem } from '../actions/itemActions';
 import { browserHistory } from 'react-router';
 
 class ItemNewContainer extends Component {
+  debugger
   constructor(props) {
     super(props);
     this.state = {
@@ -38,21 +39,23 @@ class ItemNewContainer extends Component {
       <div>
         <h2>Add an Item</h2>
         <form onSubmit={(event) => this.handleOnSubmit(event)} >
-          <input
-            type="text"
-            placeholder="Name"
+          <div class="ui left corner labeled input">
+            <input type="string" placeholder="Name"
             onChange={(event) => this.handleOnNameChange(event)} />
-          <input
-            type="text"
-            placeholder="Amount"
-            onChange={(event) => this.handleOnAmountChange(event)} />
-          <input
-            type="text"
-            placeholder="Description"
-            onChange={(event) => this.handleOnDescriptionChange(event)} />
-          <input
-            type="submit"
-            value="Add Item" />
+            <div class="ui left corner label">
+              <i class="asterisk icon"></i>
+            </div>
+          </div>
+          <div class="ui right labeled input">
+            <div class="ui label">$</div>
+            <input type="text" placeholder="Amount" onChange={(event) => this.handleOnAmountChange(event)} />
+          </div>
+          <br/>
+          <div class="ui fluid action input">
+            <input type="text" placeholder="Description" onChange={(event) => this.handleOnDescriptionChange(event)} />
+          </div>
+
+          <input type="submit" value="Add Item" />
         </form>
       </div>
     );
@@ -63,4 +66,6 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({addItem: addItem}, dispatch);
 };
 
-export default connect(null, mapDispatchToProps)(ItemNewContainer);
+const ConnectedItemNewContainer = connect(null, mapDispatchToProps)(ItemNewContainer);
+
+export default ConnectedItemNewContainer;
