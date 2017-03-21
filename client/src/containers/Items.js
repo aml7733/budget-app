@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import {fetchItems} from '../actions/itemActions.js'
 import Assets from '../components/Assets';
 import Liabilities from '../components/Liabilities'
+import ItemsShowModal from './ItemsShow'
 
 class Items extends Component {
 
@@ -24,7 +25,7 @@ class Items extends Component {
       <div>
           <Assets items={assets} /><br/>
           <Liabilities items={liabilities} />
-          {this.props.children}
+          {this.props.children}<br/>
       </div>
     );
   }

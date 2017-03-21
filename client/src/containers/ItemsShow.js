@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import {showModal, hideModal} from '../actions/modalActions.js'
 
-const ItemsShow = (props) => {
-  const item = props.item;
 
-  return (
-    <div className="col-md-4">
-      <h2>{item.name}  :  {item.amount}</h2>
-      <p>{item.description}</p>
-    </div>
-  );
+class ItemsShowModal extends Component {
+  componentWillMount(){
+    this.props.showModal();
+  }
+  render() {
+    const item = this.props.item;
+    const isOpen = this.props.isOpen;
+    return (
+      <div className={isOpen ? 'modal modal--is-open' : 'modal'}>
+        <h2>{item.name}  :  {item.amount}</h2>
+        <p>{item.description}</p>
+      </div>
+    );
+  }
 };
+
+
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps)
-  return {
-    item: state.items.find(item => item.id === +ownProps.params.id)
-  };
+  console.log(state);
+  if (state.items.length > 0) {
+    const requestedItem = ((state.items[0].assets.find(item => item.id === parseInt(ownProps.params.id, 10))) || (state.items[0].liabilities.find(item => item.id === parseInt(ownProps.params.id, 10))))
+    return {
+      item: requestedItem || null
+    };
+  }
 };
 
-const ConnectedItemsShow = connect(mapStateToProps)(ItemsShow);
+const mapDispatchToProps = (dispatch) => {
+  console.log('in map dispatch to props ItemsShowModal')
+  return bindActionCreators({
+      showModal: showModal
+    }, dispatch);
+};
 
-export default ConnectedItemsShow;
+export default connect(mapStateToProps, mapDispatchToProps)(ItemsShowModal);

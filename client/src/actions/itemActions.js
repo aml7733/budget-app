@@ -4,6 +4,10 @@ export function addItem(item) {
   return { type: "ADD_ITEM", payload: item }
 }
 
+export function deleteItem(item) {
+  return { type: "DELETE_ITEM", id: item.id }
+}
+
 export function fetchItems() {
   return (dispatch) => {
     return fetch('/items').then(response => response.json()).then(itemsJSON =>
