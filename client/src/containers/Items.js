@@ -5,7 +5,7 @@ import {fetchItems} from '../actions/itemActions.js'
 import Assets from '../components/Assets';
 import Liabilities from '../components/Liabilities'
 
-class ItemsContainer extends Component {
+class Items extends Component {
 
   componentWillMount(){
     if (this.props.items.length === 0) {
@@ -31,17 +31,17 @@ class ItemsContainer extends Component {
 };
 
 const mapStateToProps = (state) => {
-  console.log('in map state to props ItemsContainer')
+  console.log('in map state to props Items')
   return {
     items: state.items
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
-  console.log('in map dispatch to props ItemsContainer')
+  console.log('in map dispatch to props Items')
   return bindActionCreators({
       fetchItems: fetchItems
     }, dispatch);
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Items);

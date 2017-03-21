@@ -4,8 +4,7 @@ import { bindActionCreators } from 'redux';
 import { addItem } from '../actions/itemActions';
 import { browserHistory } from 'react-router';
 
-class ItemNewContainer extends Component {
-  debugger
+class ItemsNew extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -67,4 +66,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({addItem: addItem}, dispatch);
 };
 
-export default connect(null, mapDispatchToProps)(ItemNewContainer);
+export default connect(null, mapDispatchToProps)(ItemsNew);

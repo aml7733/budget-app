@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 
 
 class App extends Component {
-  debugger
 
   render() {
     return (

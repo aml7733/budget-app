@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const ItemShow = (props) => {
+const ItemsShow = (props) => {
   const item = props.item;
 
   return (
@@ -19,6 +19,6 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const ConnectedItemShow = connect(mapStateToProps)(ItemShow);
+const ConnectedItemsShow = connect(mapStateToProps)(ItemsShow);
 
-export default ConnectedItemShow;
+export default ConnectedItemsShow;

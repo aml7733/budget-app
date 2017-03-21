@@ -6,9 +6,9 @@ import { Router, Route, browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import App from './components/App';
-import ConnectedItemsContainer from './containers/ItemsContainer';
-import ConnectedItemNewContainer from './containers/ItemNewContainer';
-import ConnectedItemShow from './containers/ItemShow';
+import ConnectedItems from './containers/Items';
+import ConnectedItemsNew from './containers/ItemsNew';
+import ConnectedItemsShow from './containers/ItemsShow';
 // import jquery from 'jquery';
 import '../semantic/dist/semantic.css';
 
@@ -22,9 +22,9 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <Route path="/items" component={ConnectedItemsContainer} >
-          <Route path="/items/new" component={ConnectedItemNewContainer} />
-          <Route path="/items/:id" component={ConnectedItemShow} />
+        <Route path="/items" component={ConnectedItems} >
+          <Route path="/items/new" component={ConnectedItemsNew} />
+          <Route path="/items/:id" component={ConnectedItemsShow} />
         </Route>
       </Route>
     </Router>
