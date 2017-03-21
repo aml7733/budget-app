@@ -10,7 +10,6 @@ class ItemsShow extends Component {
     const deleteId = event.target.dataset.id;
     this.props.deleteItem(deleteId);
     browserHistory.push('/items');
-    debugger
   }
 
   render() {

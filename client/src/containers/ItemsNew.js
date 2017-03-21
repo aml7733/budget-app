@@ -17,7 +17,6 @@ class ItemsNew extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     console.log(this.state);
-    debugger
     this.props.addItem(this.state);
     browserHistory.push('/items');
   }

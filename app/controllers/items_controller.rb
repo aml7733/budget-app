@@ -19,8 +19,8 @@ class ItemsController < ApplicationController
 
   def create
     params_hash = JSON.parse(params[:json])
-    @item = Item.new(params_hash)
-    binding.pry
+    @item = Item.find_or_create_by(params_hash)
+
     if @item.save
       render json: @item
     end

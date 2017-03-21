@@ -1,7 +1,6 @@
 import fetch from 'isomorphic-fetch';
 
 export function addItem(item) {
-  debugger
   let data = new FormData();
   data.append('json', JSON.stringify(item));
 
@@ -12,7 +11,11 @@ export function addItem(item) {
     }).then(response => {
       console.log(response);
       response.json();
-    }).then(itemJSON => dispatch({ type: 'ADD_ITEM', payload: itemJSON }));
+    }).then(itemJSON => {
+      if (itemJSON) {
+        dispatch({ type: 'ADD_ITEM', payload: itemJSON });
+      }
+      });
   }
 }
 
