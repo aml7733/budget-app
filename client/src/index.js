@@ -9,7 +9,6 @@ import App from './components/App';
 import ConnectedItems from './containers/Items';
 import ConnectedItemsNew from './containers/ItemsNew';
 import ConnectedItemsShow from './containers/ItemsShow';
-// import jquery from 'jquery';
 import '../semantic/dist/semantic.css';
 
 const store = createStore(

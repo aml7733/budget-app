@@ -3,13 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { deleteItem } from '../actions/itemActions'
 import { browserHistory } from 'react-router'
-// import {showModal, hideModal} from '../actions/modalActions.js'
-
 
 class ItemsShow extends Component {
-  // componentWillMount(){
-  //   this.props.showModal();
-  // }
   handleDelete(event){
     event.preventDefault();
     const deleteId = event.target.dataset.id;
