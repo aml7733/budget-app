@@ -6,8 +6,6 @@ const Total = (props) => {
     props.items.assets.forEach(item => counter += parseInt(item.amount, 10));
     props.items.liabilities.forEach(item => counter += parseInt(item.amount, 10));
 
-    const labelClass = `ui big ${counter > 0 ? "label" : "red label"}`
-
     return (
       <h2 className="ui header">
         <div className="content">

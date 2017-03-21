@@ -17,6 +17,7 @@ class ItemsNew extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     console.log(this.state);
+    debugger
     this.props.addItem(this.state);
     browserHistory.push('/items');
   }
@@ -24,6 +25,12 @@ class ItemsNew extends Component {
   handleOnNameChange(event) {
     this.setState({
       name: event.target.value
+    });
+  }
+
+  handleOnAmountChange(event) {
+    this.setState({
+      amount: event.target.value
     });
   }
 

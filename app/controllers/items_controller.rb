@@ -18,7 +18,9 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
+    params_hash = JSON.parse(params[:json])
+    @item = Item.new(params_hash)
+    binding.pry
     if @item.save
       render json: @item
     end
@@ -29,9 +31,4 @@ class ItemsController < ApplicationController
     @item.destroy
   end
 
-  private
-
-  def item_params
-    params.require(:item).permit(:name, :description, :amount)
-  end
 end
