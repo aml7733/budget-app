@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import {fetchItems} from '../actions/itemActions.js'
 import Assets from '../components/Assets';
 import Liabilities from '../components/Liabilities'
-import ItemsShowModal from './ItemsShow'
 
 class Items extends Component {
 
@@ -34,7 +33,7 @@ class Items extends Component {
 const mapStateToProps = (state) => {
   console.log('in map state to props Items')
   return {
-    items: state.items
+    items: state.items,
   };
 }
 

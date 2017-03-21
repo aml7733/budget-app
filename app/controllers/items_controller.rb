@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find_by(id: params[:id]);
+    @item = Item.find_by(id: params[:id])
     render json: @item
   end
 
@@ -22,6 +22,11 @@ class ItemsController < ApplicationController
     if @item.save
       render json: @item
     end
+  end
+
+  def destroy
+    @item = Item.find_by(id: params[:id])
+    @item.destroy
   end
 
   private

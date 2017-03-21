@@ -4,8 +4,11 @@ export function addItem(item) {
   return { type: "ADD_ITEM", payload: item }
 }
 
-export function deleteItem(item) {
-  return { type: "DELETE_ITEM", id: item.id }
+export function deleteItem(itemId) {
+  debugger
+  return (dispatch) => {
+    return fetch(`/items/${itemId}`, { method: 'DELETE' }).then(dispatch({ type: "DELETE_ITEM", id: itemId }))
+  }
 }
 
 export function fetchItems() {
