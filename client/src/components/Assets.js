@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class Assets extends Component {
   render() {
     const assets = this.props.items && this.props.items.map(asset => (
-      <p>{asset.name}  :  {asset.amount}</p>
+      <div className="item" key={asset.id}>
+        <div className="content">
+          <div className="header">{asset.name}</div>
+          {asset.amount}
+        </div>
+        <Link to={`/items/${asset.id}`}>Show Details</Link>
+      </div>
     ));
 
     return (
-      <div className="eight wide column">
-        <h3>Assets</h3>
+      <div className="ui celled list">
+        <h2>Assets</h2>
         {assets}
       </div>
     )

@@ -6,9 +6,9 @@ import { Router, Route, browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import App from './components/App';
-import {ConnectedItemsContainer} from './containers/ItemsContainer';
-import {ConnectedItemNewContainer} from './containers/ItemNewContainer';
-import ListItem from './containers/ListItem';
+import ConnectedItemsContainer from './containers/ItemsContainer';
+import ConnectedItemNewContainer from './containers/ItemNewContainer';
+import ConnectedItemShow from './containers/ItemShow';
 // import jquery from 'jquery';
 import '../semantic/dist/semantic.css';
 
@@ -24,7 +24,7 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <Route path="/items" component={ConnectedItemsContainer} >
           <Route path="/items/new" component={ConnectedItemNewContainer} />
-          <Route path="/items/:id" component={ListItem} />
+          <Route path="/items/:id" component={ConnectedItemShow} />
         </Route>
       </Route>
     </Router>

@@ -9,10 +9,7 @@ class ItemsContainer extends Component {
 
   componentWillMount(){
     if (this.props.items.length === 0) {
-
-
       this.props.fetchItems();
-      // debugger
     }
   }
 
@@ -23,13 +20,11 @@ class ItemsContainer extends Component {
       liabilities = this.props.items[0].liabilities;
     }
 
-
     return (
       <div>
-        <div className=''>
           <Assets items={assets} /><br/>
           <Liabilities items={liabilities} />
-        </div>
+          {this.props.children}
       </div>
     );
   }
@@ -49,4 +44,4 @@ const mapDispatchToProps = (dispatch) => {
     }, dispatch);
 };
 
-export const ConnectedItemsContainer = connect(mapStateToProps, mapDispatchToProps)(ItemsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ItemsContainer);

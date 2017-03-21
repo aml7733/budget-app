@@ -39,24 +39,25 @@ class ItemNewContainer extends Component {
       <div>
         <h2>Add an Item</h2>
         <form onSubmit={(event) => this.handleOnSubmit(event)} >
-          <div class="ui left corner labeled input">
+          <div className="ui left corner labeled input">
             <input type="string" placeholder="Name"
             onChange={(event) => this.handleOnNameChange(event)} />
-            <div class="ui left corner label">
-              <i class="asterisk icon"></i>
+            <div className="ui left corner label">
+              <i className="asterisk icon"></i>
             </div>
           </div>
-          <div class="ui right labeled input">
-            <div class="ui label">$</div>
+          <div className="ui right labeled input">
+            <div className="ui label">$</div>
             <input type="text" placeholder="Amount" onChange={(event) => this.handleOnAmountChange(event)} />
           </div>
           <br/>
-          <div class="ui fluid action input">
+          <div className="ui fluid action input">
             <input type="text" placeholder="Description" onChange={(event) => this.handleOnDescriptionChange(event)} />
           </div>
 
           <input type="submit" value="Add Item" />
         </form>
+        {this.props.children}
       </div>
     );
   }
@@ -66,6 +67,4 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({addItem: addItem}, dispatch);
 };
 
-const ConnectedItemNewContainer = connect(null, mapDispatchToProps)(ItemNewContainer);
-
-export default ConnectedItemNewContainer;
+export default connect(null, mapDispatchToProps)(ItemNewContainer);
