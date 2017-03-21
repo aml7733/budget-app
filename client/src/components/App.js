@@ -11,6 +11,7 @@ class App extends Component {
           <li><Link to="/items">Show All Items</Link></li>
           <li><Link to="/items/new">Add New Item</Link></li>
         </ul>
+        {this.props.children}
       </div>
     );
   }

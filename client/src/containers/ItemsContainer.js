@@ -7,17 +7,23 @@ import Liabilities from '../components/Liabilities'
 
 class ItemsContainer extends Component {
 
-  componentDidMount(){
+  componentWillMount(){
     if (this.props.items.length === 0) {
-      console.log('in component did mount')
-      fetchItems();
-      debugger;
+
+
+      this.props.fetchItems();
+      // debugger
     }
   }
 
   render() {
-    let assets = this.props.items.assets;
-    let liabilities = this.props.items.liabilities;
+    let assets, liabilities;
+    if (this.props.items[0]) {
+      assets = this.props.items[0].assets;
+      liabilities = this.props.items[0].liabilities;
+      {console.log(this.props.items[0].assets)}
+    }
+
 
     return (
       <div>

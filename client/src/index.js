@@ -6,7 +6,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 import App from './components/App';
-import ConnectedItemsContainer from './containers/ItemsContainer';
+import {ConnectedItemsContainer} from './containers/ItemsContainer';
 import ItemNewContainer from './containers/ItemNewContainer';
 import ItemShow from './containers/ItemShow';
 
@@ -20,7 +20,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-        <Route path="items" component={ConnectedItemsContainer} >
+        <Route path="/items" component={ConnectedItemsContainer} >
           <Route path="/items/new" component={ItemNewContainer} />
           <Route path="/items/:id" component={ItemShow} />
         </Route>
