@@ -9,6 +9,8 @@ import App from './components/App';
 import {ConnectedItemsContainer} from './containers/ItemsContainer';
 import ItemNewContainer from './containers/ItemNewContainer';
 import ItemShow from './containers/ItemShow';
+import jquery from 'jquery';
+import '../semantic/dist/semantic.css';
 
 const store = createStore(
   rootReducer,

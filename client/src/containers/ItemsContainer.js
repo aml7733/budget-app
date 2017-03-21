@@ -21,7 +21,6 @@ class ItemsContainer extends Component {
     if (this.props.items[0]) {
       assets = this.props.items[0].assets;
       liabilities = this.props.items[0].liabilities;
-      {console.log(this.props.items[0].assets)}
     }
 
 
