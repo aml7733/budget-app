@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const ItemsShow = (props) => {
+const ListItem = (props) => {
   const item = props.item;
 
   return (
