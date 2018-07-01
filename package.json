@@ -1,0 +1,28 @@
+{
+  "name": "budget-app",
+  "version": "1.0.0",
+  "description": "## Install Fork/clone the repo, then simply run 'bundle install' in the main directory. Change directories to budget-app/client, and run npm install. To create the database, run 'rake db:migrate' in the terminal.  If you'd like a few seed items, run 'rake db:seed' afterward. Since this is a front and back end project, you'll have to run two servers. I've set up a rake task to do this for you: run 'rake start' to begin running two servers via the foreman gem.  The front end will run on port 3000, and the rails back end on port 3001.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aml7733/budget-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aml7733/budget-app/issues"
+  },
+  "homepage": "https://github.com/aml7733/budget-app#readme"
+}
