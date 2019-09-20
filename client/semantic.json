@@ -19,5 +19,5 @@
   "autoInstall": false,
   "rtl": false,
   "components": ["reset", "site", "button", "container", "divider", "header", "input", "label", "list", "form", "grid", "menu", "message", "table", "embed", "modal", "tab", "transition", "api", "form", "state", "visibility"],
-  "version": "2.3.2"
+  "version": "2.4.2"
 }
